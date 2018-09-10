@@ -1,0 +1,20 @@
+<html !DOCTYPE lang="es">
+	<head>
+		<style type="text/css">
+			body{
+				background-color: red;
+				color: white;
+			}
+		</style>
+		<script type="text/javascript">
+		function mandarmensaje(mensaje1){
+			document.getElementById("mensaje").innerHTML += mensaje1;
+		}
+		</script>
+	</head>
+	<body>
+		<h1>Esto es un iframe</h1>
+		<a href="javascript: parent.recibirMensaje('Este es un mensaje desde el iframe')">Contenedor de mensaje</a>
+		<p id="mensaje"></p>
+	</body>
+</html>

@@ -1,0 +1,17 @@
+<html !doctype lang="es">
+	<head>
+    	<title>Fechas</title>
+    </head>
+	<body>
+		<script type="text/javascript">
+			var fecha = new Date();
+			var dia = fecha.getDay();
+			var mes = fecha.getMonth();
+			var anio = fecha.getFullYear();
+			var meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Setiembre","Octubre","Noviembre","Diciembre"];
+			document.write(fecha+"<br>");
+			document.writeln(dia+"/"+mes+"/"+anio+"<br>");
+			document.write("Fecha Actual : " + dia + " de " + meses[mes] + " del "+anio);
+		</script>
+    </body>
+</html>

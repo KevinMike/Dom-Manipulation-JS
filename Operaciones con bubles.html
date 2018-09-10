@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tablas y formularios</title>
+</head>
+
+<body>
+<p>Fecha de Nacimiento</p>
+<form id="form1" name="form1" method="form1" action="">
+  <select name="dia" id="dia2">
+  	<script type="text/javascript">
+		var i;
+		for(i=1;i<=31;i++)
+		{
+			document.write("<option>" + parseInt(i) + "</option>");
+		}
+	</script>
+  </select>
+  <select name="mes" id="dia">
+    	<script type="text/javascript">
+		var i;
+		for(i=1;i<=12;i++)
+		{
+			document.write("<option>" + parseInt(i) + "</option>");
+		}
+	</script>
+  </select>
+  <select name="anio" id="anio">
+    	<script type="text/javascript">
+		var i;
+		for(i=1;i<=100;i++)
+		{
+			document.write("<option>" + parseInt(1950+i) + "</option>");
+		}
+	</script>
+  </select>
+</form>
+<script type="text/javascript">
+	var filas = prompt("Ingrese el numero de sucursales")
+	var columnas = prompt("Ingrese el numero de meses")
+</script>
+<table width="200" border="1px">
+	<tr>
+    	<script type="text/javascript" >
+			for(var i=0;i<=columnas;i++)
+			{
+				if(i==0){
+					document.write("<th>Sucursal</th>");
+				}
+				else
+				{
+					document.write("<th>Mes"+i+"</th>");	
+				}
+			}
+		</script>
+    </tr>
+	<script type="text/javascript">
+		for(var i=1;i<=filas;i++ ){
+			document.write("<tr>");
+			for(var j=0;j<=columnas;j++){
+				if(j==0){
+					document.write("<td>Suc. "+i+"</td>");
+				}
+				else{
+					document.write("<td> <input type=\"text\" size = '5'/> </td>");
+				}
+			}
+			document.write("</tr>");
+		}
+	</script>
+</table>
+<script type="text/javascript">
+	function MostrarMensaje(mensaje,color){
+		if(color=="rojo"){
+			document.write("<p style='color:red'/>"+mensaje+"</p>");
+		}
+		else{
+			document.write("<p style='color:blue' />"+mensaje+"</p>");	
+		}
+	}
+	MostrarMensaje("Hola","rojo");
+	MostrarMensaje("Que Hace","azul");
+	function Suma(nro1,nro2){
+		var suma= nro1+nro2;
+		return suma;
+	}
+	document.write(Suma(4,123123));
+</script>
+<p>Utilizaremos la creacion de tablas con formularios usando funciones </p>
+<script type="text/javascript">
+	function opciones(desde,hasta,selected)
+	{
+		for(var k = 0; k <= (hasta - desde ); k++)	
+		{
+			if(selected != undefined)
+			{
+				if( selected == (k+desde) )
+				{
+					document.write("<option selected='selected'>"+ parseInt(k+desde)+"</option>");
+				}
+				else
+				{
+					document.write("<option>"+ parseInt(k+desde)+"</option>");
+				}
+			}
+			else
+			{
+				document.write("<option>"+ parseInt(k+desde)+"</option>");
+			}
+		}
+	}
+</script>
+<form id="form2" name="form2" method="form2" action="">
+  <select name="dia" id="dia2">
+  	<script type="text/javascript">
+		opciones(1,31,8);
+	</script>
+  </select>
+  <select name="mes" id="dia">
+  	<script type="text/javascript">
+		opciones(1,12,1);
+	</script>
+  </select>
+  <select name="anio" id="anio">
+  	<script type="text/javascript">
+		opciones(1950,2014,2014);
+	</script>
+  </select>
+</form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<html !DOCTYPE lang="es">
+	<body onLoad="alert('Se cargo la pagina');"  onunload="alert('Te estas llendo');" onResize="alert('No cambies el tanmaño de ña ventana')" >
+	<form id = "form1"  name="form1" method="post" action="" onSubmit="alert('Formumario enviado')">
+	<label for="nombre">Nombre Completo: </label>
+	<input type="text" name="nombre" id="nombre" onFocus="alert('entraste al foco')" onBlur="alert('saliste del foco')" onChange="alert('cambiaste el valor del foco')" onKeyDown="" onKeyUp="mostrartecla(event)" onKeyPress=""> <br>
+	<input type="submit" name="button" id="button" value="Enviar">
+	<a href="http://www.google.com.pe" onClick="return confirmar()">Ir a google</a>
+	<script type="text/javascript">
+	function confirmar(){
+		var valor = confirm("¿Desea salir de esta pagina que kevin programo con tanto esmero?");
+		return valor;
+	}
+	function mostrartecla(event){
+			alert(event.keyCode);
+			if(event.ctrlKey)
+			{
+				alert("Esta precionando la tecla control")	
+			}
+	}
+	</script>
+	</form>
+	</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Documento sin título</title>
+<style type="text/css">
+	input{
+		border: 1px solid gray;
+		background-color: #CCC;
+		height: 20px;
+	}
+	input.enfoco{
+		background-color: #CF6;
+		border: 1px solid green;
+	}
+	.caja{
+		border: 1px solid gray;	
+		padding: 10px;
+	}
+</style>
+<script type="text/javascript">
+	function focusIn(input){
+		input.className = "enfoco";
+	}
+	function blurOut(input){
+		input.className = "";
+	}
+</script>
+</head>
+
+<body onload ="document.getElementById('contenedor').className='caja'">
+	<div id="contenedor">
+	<label>
+    Nombre: <input type="text" id="txtnombre" onfocus=" focusIn(this) " onblur=" blurOut(this)"/> <!--Se le puede kitar la clase o asignarle otra-->
+    </label>
+    <label>
+    Apellido: <input type="text" id="txtapellido" onfocus ="focusIn(this)" onblur="blurOut(this)"/>
+    </label>
+    </div>
+<!-------------------------------------------------------------------------------------------------------->
+<style type="text/css">
+	#cajacontenedora{
+		width : 200px;
+		height : 200px;
+		background-color: #CF6;
+		display: block;
+	}
+</style>
+<script type="text/javascript">
+	function Apagar(){
+		var caja = document.getElementById("cajacontenedora");
+		//caja.style.visibility = "hidden";
+		caja.style.display = "none";
+	}
+	function Encender(){
+		var caja = document.getElementById("cajacontenedora");
+		//caja.style.visibility = "visible";
+		caja.style.display = "block";
+	}
+	function ONOFF(){
+		var boton = document.getElementById("boton");
+		var caja = document.getElementById("cajacontenedora");
+		if(caja.style.display == "block")
+		{
+			caja.style.display = "none";
+			boton.value = "Encender";
+		}
+		else
+		{
+			caja.style.display = "block";
+			boton.value = "Apagar";
+		}
+	}
+</script>
+<input type="checkbox"  checked="checked" onchange="ONOFF()"  /> Contenedor Visible
+<div id="cajacontenedora">
+	
+</div>
+<br />
+<input type="button" value="Apagar"  onclick="Apagar()" />
+<input type="button" value="Encender"  onclick="Encender()" />
+<input  id="boton" type="button" value="Apagar" onclick= " ONOFF()"/>
+</body>
+</html>

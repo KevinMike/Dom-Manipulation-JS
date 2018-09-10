@@ -1,0 +1,14 @@
+<!HTML>
+	<BODY>
+		<script type="text/javascript">
+		function  recibirmensaje(mensaje1){
+			document.getElementById("mensaje").innerHTML += mensaje1;
+		}
+		</script>
+		<p>Esta es una nueva ventana</p>
+		<p><a href="javascript: window.close()">CERRAR</a></p>
+		<input type="button" onclick="opener.recibirmensaje('Este es un mensaje desde el PopUp');" value="Comunicación con la ventana principal"/>
+		<p id="mensaje"></p>
+	</BODY>
+
+</HTML>

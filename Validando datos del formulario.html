@@ -1,0 +1,154 @@
+<html !DOCTYPE lang="es">
+	<head>
+		<style type="text/css">
+			form{
+				width: 350px;
+				margin: auto;
+
+			}
+			label{
+				width: 200px;
+				display: block;
+				margin: 10px;
+				float: left;
+			}
+			button{
+				display: block;
+				clear: both;
+				margin-left: 200px;
+			}
+			ul{
+				list-style: none;
+				margin: 0px;
+			}
+			li{
+				margin: 0;
+				padding: 0;
+				height: 80px;
+			}
+			.enfoco{
+				background-color: #9F9;
+				border: 1px solid green;
+			}
+			.error{
+				background-color: #6F6;
+				border: 1px solid red;
+			}
+		</style>
+		<script type="text/javascript">
+		 function entroENFOCO(elemento){
+		 	elemento.className = "enfoco";
+		 }
+		 function SalidoDEFOCO(elemento){
+		 	elemento.className = "";
+		 }
+		 function revisarObligatorio(elemento){
+		 		if(elemento.value==""){
+		 			elemento.className = "error";
+		 		}
+		 		else{
+		 			elemento.className = "";
+		 		}
+		 }
+		 function revisarnumerico(elemento){
+		 		if(elemento.value != ""){
+		 			if(isNaN(elemento.value)){
+		 				elemento.className = "error";
+		 			}
+		 			else
+		 			{
+		 				elemento.className = "";
+		 			}
+		 		}
+		 }
+		 function revisarLongitud(elemento, minimo){
+		 		if(elemento.value !=""){
+		 			if(elemento.value.length >= minimo){
+		 				elemento.className = "";
+		 			}
+		 			else
+		 			{
+		 				elemento.className = "error";
+		 			}
+		 		}
+		 }
+		 function revisaremail(elemento){
+				if(elemento.value !=""){
+					var dato = elemento.value;
+					var expresion = /([0-9a-zA-Z]+[-._+&])*[0-9a-zA-Z]+@([-0-9a-zA-Z]+[.])+[a-zA-Z]{2,6}/;
+					if(!expresion.test(dato)){
+						elemento.className = "error";
+					}
+					else{
+						elemento.className = "";
+					}
+				}
+		 }
+		 function validaciontotal(){
+			 	var estatodook = true;
+		 	if(document.getElementById("nombre").value.length < 2){
+		 		estatodook = false;
+		 	}
+		 	if(document.getElementById("direccion").value.length < 5){
+		 		estatodook = false;
+		 	}
+		 	if(!document.getElementById("aceptocondiciones").checked){
+		 		estatodook = false;
+		 	}
+			if(document.getElementById("edad").value != "")
+			{
+				if(isNaN(document.getElementById("edad").value))
+				{
+					estatodook =false;	
+				}
+			}		
+
+			
+			
+			
+			if(estatodook){
+			
+				alert("Formulario enviado correctamente");
+			}
+			else{
+				alert("El formulario contiene datos erroneos, porfavor corrijalos");
+			}
+		 	return estatodook;
+		 }
+		</script>
+	</head>
+	<body>
+		<form onsubmit="return validaciontotal();">
+			<ul>
+			<li>
+			<label for="nombre">Nombre *</label>
+			<input type="text" id="nombre" name="nombre" onfocus="entroENFOCO(this)" onblur="SalidoDEFOCO(this); revisarObligatorio(this); revisarLongitud(this,2)" />
+			</li>
+			<li>
+			<label for="direccion">Direccion *</label>
+			<input type="text" id="direccion" name="direccion" onfocus="entroENFOCO(this)" onblur="SalidoDEFOCO(this); revisarObligatorio(this); revisarLongitud(this,5)"/>
+			</li>
+			<li>
+			<label for="edad">Edad</label>
+			<input type="text" id="edad" name="edad" onfocus="entroENFOCO(this)" onblur="SalidoDEFOCO(this); revisarnumerico(this)"/>
+			</li>
+			<li>
+			<label for="email">E-mail</label>
+			<input type="text"id="email" name="email" onfocus="entroENFOCO(this)" onblur="SalidoDEFOCO(this); revisarObligatorio(this); revisaremail(this);"/>
+			</li>
+			<label for="estadocivil">Estado Civil</label>
+			<select id"estadocivil" name="estadocivil" onfocus="entroENFOCO(this)" onblur="SalidoDEFOCO(this)">
+				<option value="">Seleccione</option>
+				<option>Soltero/a</option>
+				<option>Casado/a</option>
+				<option>Viudo/a</option>
+				<option>Divorciado/a</option>
+			</select>
+			<li>
+			<label><input type="checkbox" value="SI" id="aceptocondiciones"/>Acepto las condiciones</label>
+			</li>
+			<button>Registrarme</button>
+			</ul>
+		</form>
+	</body>
+</html>

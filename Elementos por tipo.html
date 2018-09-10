@@ -1,0 +1,71 @@
+<html !DOCTYPE lang="ES">
+	<head>
+		<style type="text/css">
+			.par {
+				background-color:#9F0;
+			}
+			.impar {
+				background-color:#3FF;
+			}
+		</style>
+        <script type="text/javascript">
+			function AplicarEstilo(){
+				var tabla = document.getElementById("tabla1");
+				var celdas = tabla.getElementsByTagName("tr");
+				for(var i=0;i < celdas.length; i++){
+					if( i % 2 == 0){
+						celdas[i].className = "par";
+					}
+					else{
+						celdas[i].className= "impar";
+					}
+				}
+			}
+		</script>
+    </head>
+    <body onLoad="AplicarEstilo()">
+		<table id="tabla1" width="200" border="1" >
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+</table>
+
+    </body>
+</html>

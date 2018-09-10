@@ -1,0 +1,21 @@
+<html>
+	<body>
+		<script type="text/javascript">
+		var popup;
+		function abrir(){
+			 popup= window.open("ventanapopup.html","_blank","ventana","width = 500 , height = 500 , resizable = no, toolbar = yes, menubar=yes, status=yes,scrollbars = yes")
+		}
+		function  recibirmensaje(mensaje1){
+			document.getElementById("mensaje").innerHTML += mensaje1;
+		}
+		</script>
+		<input type="button" value="Abrir Ventana" onclick="abrir()" />
+		<p id="mensaje"></p>
+		<input type="button" value="Enviar mensaje al popup" onclick="popup.recibirmensaje('Soy tu dueño carajooo')">
+		<br>
+		<br>
+		<a href="javascript: window.print()">Imprimir</a>
+		<input type="button" onclick="window.location.href='http://www.facebook.com'" value="Facebook">
+		<a href="javascript:history.back()">Regresar</a>
+	</body>
+</html>

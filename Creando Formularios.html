@@ -1,0 +1,87 @@
+<html !DOCTYPE lang="es">
+	<head>
+		<style type="text/css">
+			form{
+				width: 350px;
+				margin: auto;
+
+			}
+			label{
+				width: 200px;
+				display: block;
+				margin: 10px;
+				float: left;
+			}
+			button{
+				display: block;
+				clear: both;
+				margin-left: 200px;
+			}
+			ul{
+				list-style: none;
+				margin: 0px;
+			}
+			li{
+				margin: 0;
+				padding: 0;
+				height: 80px;
+			}
+			.enfoco{
+				background-color: #9F9;
+				border: 1px solid green;
+			}
+			.ayuda{
+				font-size: xx-small;
+				color: green;
+			}
+		</style>
+		<script type="text/javascript">
+		 function entroENFOCO(elemento){
+		 	elemento.className = "enfoco";
+		 	var elementodelista = elemento.parentNode;
+		 	var ayuda = document.getElementById("ayuda");
+		 	if(ayuda!=undefined){
+		 		ayuda.parentNode.removeChild(ayuda);
+		 	}
+			elementodelista.innerHTML += "<p class = 'ayuda' id = 'ayuda'>Prueba</p>";
+		 }
+		 function SalidoDEFOCO(elemento){
+		 	elemento.className = "";
+		 }
+		</script>
+	</head>
+	<body>
+		<form>
+			<ul>
+			<li>
+			<label for="nombre">Nombre</label>
+			<input type="text" id="nombre" name="nombre" onfocus="entroENFOCO(this)" onblur="SalidoDEFOCO(this)" />
+			</li>
+			<li>
+			<label for="direccion">Direccion</label>
+			<input type="text" id="direccion" name="direccion" onfocus="entroENFOCO(this)" onblur="SalidoDEFOCO(this)"/>
+			</li>
+			<li>
+			<label for="nombre">Edad</label>
+			<input type="text" id="edad" name="edad" onfocus="entroENFOCO(this)" onblur="SalidoDEFOCO(this)"/>
+			</li>
+			<li>
+			<label for="nombre">E-mail</label>
+			<input type="text"id="email" name="email" onfocus="entroENFOCO(this)" onblur="SalidoDEFOCO(this)"/>
+			</li>
+			<label for="estadocivil">Estado Civil</label>
+			<select id"estadocivil" name="estadocivil" onfocus="entroENFOCO(this)" onblur="SalidoDEFOCO(this)">
+				<option>Seleccione</option>
+				<option>Soltero/a</option>
+				<option>Casado/a</option>
+				<option>Viudo/a</option>
+				<option>Divorciado/a</option>
+			</select>
+			<li>
+			<label><input type="checkbox" value="SI" />Acepto las condiciones</label>
+			</li>
+			<button>Registrarme</button>
+			</ul>
+		</form>
+	</body>
+</html>

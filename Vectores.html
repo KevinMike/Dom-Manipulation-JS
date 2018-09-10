@@ -1,0 +1,43 @@
+<HTML !DOCTYPE lang="es">
+<head></head>
+<body>
+		<p style="color:red">Mi primer array</p>
+		<script type="text/javascript">
+		var nombre = ["Kevin","Mike","Carlos","San Marcos"];
+		var paises = new Array();
+		paises.push("Argentina");
+		paises.push("Perú");
+		paises.push("Bolivia");
+		document.write("<div>"+nombre[0]+"</div>");
+		for (var i = 0; i < paises.length ; i++)
+		{
+		 	document.write("<div>"+paises[i]+"</div>");
+		}
+		</script>
+		<p style="color:blue">Lista de array</p>
+
+		<script type="text/javascript">
+		var precios = new Array();
+		do{
+			var precio = prompt("Ingrese un precio");
+			if(precio!=""&&precio!=undefined)
+			{
+				precios.push(precio);
+
+			}
+		}while(precio!="" && precio!=undefined);
+		cantidad=precios.length;
+		document.write("<h1>Hay "+cantidad+" precios definidos </h1>")
+		var suma = 0;
+		for(i =0;i<cantidad;i++){
+			suma = suma  + parseInt(precios[i]);
+		}
+		var promedio = 0;
+		if(cantidad>0)
+		{
+			promedio = suma/cantidad;
+		}
+		document.write("La suma de los precios es "+ suma+" y el promedio es "+promedio);
+		</script>
+</body>
+</HTML>
